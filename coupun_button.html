@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vyloo - Get Your Discount</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 600px; 
+            margin: 20px auto; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .vyloo-logo { 
+            width: 200px; 
+            margin-bottom: 20px; 
+        }
+        .form-section, .coupon-section { 
+            background: #f5f5f5; 
+            padding: 30px; 
+            border-radius: 10px; 
+            margin: 20px 0; 
+        }
+        input { 
+            width: 80%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+        }
+        button { 
+            background: #4CAF50; 
+            color: white; 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px; 
+        }
+        .coupon-code { 
+            font-size: 24px; 
+            color: #4CAF50; 
+            margin: 20px 0; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+    <img src="https://vyloo.in/static/media/logo2.e273554229090e2102fc15f5c6046288.svg" 
+         alt="Vyloo Logo" 
+         class="vyloo-logo">
+    
+    <div class="form-section" id="formSection">
+        <h2>Get 20% Off Your First Order!</h2>
+        <form id="couponForm">
+            <input type="text" placeholder="Full Name" required>
+            <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}" required>
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit">Get Discount</button>
+        </form>
+    </div>
+
+    <div class="coupon-section" id="couponSection" style="display: none;">
+        <h2>Your Discount Code</h2>
+        <div class="coupon-code">VYLOO20</div>
+        <p>Show this code at checkout</p>
+        <!-- Updated redirect URL below -->
+        <button onclick="window.location.href='https://vyloo.in/download'">Download Vyloo App</button>
+    </div>
+
+    <script>
+        document.getElementById('couponForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('couponSection').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
